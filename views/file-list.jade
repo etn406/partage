@@ -1,0 +1,8 @@
+each file in fileList
+  li
+    .controls
+      a.download(type='button', href='/file/#{file.id}/#{file.urlname}') Télécharger
+    .infos
+      strong.name #{file.name}
+      small.size #{file.readableSize}
+      small.type #{file.type}

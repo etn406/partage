@@ -1,0 +1,37 @@
+doctype 5
+html
+  head
+    meta(charset="utf8")
+    title Partage
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1 Discussion
+    #chatbox
+      ul#messages
+      form#send-message
+        input(type='text', placeholder="Message...", disabled)
+        button(type='submit', disabled) Envoyer
+    
+    h1 Partage de fichiers
+    form#upload(enctype="multipart/form-data")
+      #drop-area Glisser-déposer des fichiers
+      label(for="files-upload") ou parcourir le disque
+        input#files-upload(type='file', multiple)
+    
+    ul#waiting-list
+    
+    ul#file-list
+    
+    footer
+      p
+        | Les téléchargements et les conversations ne sont pas enregistrées.<br />
+        | Les fichiers envoyés sont enregistrés anonymement.<br />
+        | Attention, vous ne pourrez pas retirer les fichiers que vous partagez.<br />
+        | Taper <i>/aide</i> pour une liste des commandes disponibles dans le chat.<br />
+        | <a href="/source.tar.gz">Code source</a> - 
+        | Propulsé par <a href="http://nodejs.org/">NodeJS</a> ! :D
+    
+    script(src="/javascripts/socket.io.min.js")
+    script(src="/javascripts/zepto.min.js")
+    script(src="/javascripts/script.js")
+    script(src="/javascripts/chat.js")
