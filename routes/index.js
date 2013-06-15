@@ -4,6 +4,7 @@ var formidable = require('formidable')
 var fileList = []
   , fileListPath = './file-list.json'
   , filesBasePath = './files'
+  , maxFileSize = Math.pow(2, 30) * 1
 
 /**
  * Lecture de la liste des fichiers.
@@ -11,6 +12,12 @@ var fileList = []
  */
 function updateFileList()
 {
+  if (!fs.existsSync(fileListPath))
+    fs.writeFile(fileListPath, '[]');
+  
+  if (!fs.existsSync(filesBasePath))
+    fs.mkdirSync(filesBasePath);
+  
   fs.readFile(fileListPath, function (err, data)
   {
     fileList = [];
@@ -86,7 +93,7 @@ exports.uploadFile = function(req, res)
   // Vérifier la taille lors de l'envoi
   form.on('progress', function(bytesReceived, bytesExpected)
   {
-    if (bytesExpected > Math.pow(2, 30) * 1)
+    if (bytesExpected > maxFileSize)
     {
       console.log("Fichier trop lourd, le téléchargement est annulé.");
       req.connection.destroy();
