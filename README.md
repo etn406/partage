@@ -1,11 +1,22 @@
+# Partage
 
-**Application web pour discuter et partager des fichiers. Fonctionne avec NodeJS.**
+## Presentation
 
-NodeJS doit être installé sur votre ordinateur, évidemment.
+Web app to chat and share files anonymously with multiple users. It can be used disconnected from Internet, so it can be used as a [PirateBox](https://en.wikipedia.org/wiki/PirateBox).
 
-Lors de l'exécution, veuillez à donner à NodeJS les droits en lecture/écriture sur le dossier _files_ et le fichier _file-list.json_
+## Install
 
-Démarrer ensuite avec
+Requires [NodeJS](https://nodejs.org/).
+
+After downloading the files, install modules with:
+
+```
+npm install
+```
+
+Make sure that NodeJS can read and write in the folder.
+
+Then, start the app with:
 
 ```
 nodejs app
