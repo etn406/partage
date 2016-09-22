@@ -1,13 +1,9 @@
-(function (tree) {
+var Node = require("./node");
 
-tree.UnicodeDescriptor = function (value) {
+var UnicodeDescriptor = function (value) {
     this.value = value;
 };
-tree.UnicodeDescriptor.prototype = {
-    toCSS: function (env) {
-        return this.value;
-    },
-    eval: function () { return this }
-};
+UnicodeDescriptor.prototype = new Node();
+UnicodeDescriptor.prototype.type = "UnicodeDescriptor";
 
-})(require('../tree'));
+module.exports = UnicodeDescriptor;

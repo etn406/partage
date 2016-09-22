@@ -1,4 +1,6 @@
 files/*
-lie-list.json
+file-list.json
 npm-debug.log
 ecosystem.json
+node_modules
+
