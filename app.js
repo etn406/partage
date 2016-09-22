@@ -2,10 +2,11 @@
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes')
-  , app = module.exports = express.createServer()
-  , io = require('socket.io').listen(app);
+const express = require('express')
+const path = require('path')
+const routes = require('./routes')
+const app = module.exports = express.createServer()
+const io = require('socket.io').listen(app);
 
 // Configuration
 app.configure(function(){
@@ -14,7 +15,7 @@ app.configure(function(){
   app.set('view options', { layout: false });
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(require('less-middleware')({ src: __dirname + '/public' }));
+  app.use(require('less-middleware')(path.join(__dirname, '/public')));
   app.use(express.static(__dirname + '/public'));
 });
 

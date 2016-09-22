@@ -13,7 +13,7 @@ var fileList = []
 function updateFileList()
 {
   if (!fs.existsSync(fileListPath))
-    fs.writeFile(fileListPath, '[]');
+    fs.writeFile(fileListPath, JSON.stringify([]));
   
   if (!fs.existsSync(filesBasePath))
     fs.mkdirSync(filesBasePath);
