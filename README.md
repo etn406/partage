@@ -1,7 +1,5 @@
 # Partage
 
-## Presentation
-
 Web app to chat and share files anonymously with multiple users. It can be used disconnected from Internet, so it can be used as a [PirateBox](https://en.wikipedia.org/wiki/PirateBox).
 
 ## Install
